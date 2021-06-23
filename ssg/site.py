@@ -16,15 +16,4 @@ class Site:
         for path in self.source.rglob("*"):
             if path.is_dir():
                 self.create_dir(path)
-            else:
-                None
 
-
-
-def main():
-    this_site = Site('C:/temp', 'C:/temp2')
-    this_site.create_dir('C:/temp2')
-
-
-if __name__ == '__main__':
-    main()
