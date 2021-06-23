@@ -3,7 +3,7 @@ from ssg.site import Site
 
 
 def main(source="content", dest="dist"):
-    config = dict(source="source", dest="dest")
+    config = dict(source, dest)
     inst = Site(**config)
     inst.build()
 
