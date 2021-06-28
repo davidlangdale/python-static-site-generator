@@ -21,7 +21,7 @@ class Parser:
     def write(self, path: Path, dest: Path, content, ext='.html'):
         full_path: Path = dest / path.with_suffix(ext).name
         with open(full_path, 'w') as file:
-            full_path.write_bytes(content)
+            file.write(content)
 
     def copy(self, path, source, dest):
         shutil.copy2(path, dest / path.relative_to(source))
