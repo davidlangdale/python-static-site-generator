@@ -29,7 +29,7 @@ def __init__():
         def copy(self, path, source, dest):
             shutil.copy2(path, path.relative_to(source) / dest)
 
-        class ResourceParser(extensions=[".jpg", ".png", ".gif", ".css", ".html"]):
+        class ResourceParser(extensions=['.jpg', '.png', '.gif', '.css', '.html']):
             def parse(self, path: Path, source: Path, dest: Path):
                 self.copy(path, source, dest)
 
