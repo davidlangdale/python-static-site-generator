@@ -15,8 +15,8 @@ class Parser:
 
     def read(self, path: Path):
         with open(path, 'r') as file:
-            contents = file.read()
-            return contents
+            return file.read()
+            
 
     def write(self, path: Path, dest: Path, content, ext='.html'):
         destination = dest
