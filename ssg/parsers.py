@@ -1,11 +1,13 @@
+import shutil
+
 from typing import List
 from pathlib import Path
-from shutil import *
+
 
 def __init__():
 
     class Parser:
-        extensions = List[str] = []
+        extensions: List[str] = []
 
         def valid_extension(self, extension):
             output = extension in self.extensions
