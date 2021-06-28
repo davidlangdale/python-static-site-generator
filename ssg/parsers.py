@@ -16,12 +16,12 @@ class Parser:
     def read(self, path: Path):
         with open(path, 'r') as file:
             return file.read()
-            
+
 
     def write(self, path: Path, dest: Path, content, ext='.html'):
         destination = dest
         full_path = destination / path.with_suffix(ext).name
-        with full_path.open() as file:
+        with open('full_path', 'w') as file:
             full_path.write_bytes(content)
 
     def copy(self, path, source, dest):
