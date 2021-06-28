@@ -3,7 +3,7 @@ from pathlib import Path
 
 class Site:
     def __init__(self, source, dest, parsers=None):
-        parsers = parsers or []
+        self.parsers = parsers or []
         self.source = Path(source)
         self.dest = Path(dest)
 
@@ -26,9 +26,9 @@ class Site:
                 return parser
 
     def run_parser(self, path):
-        parser=self.load_parser(path.suffix)
+        parser = self.load_parser(self, path.suffix)
         if parser is not None:
-            parser.parse(path, source, dest)
+            parser.parse(path, self.source, self.dest)
         else:
             print(f'Not Implemented')
 
