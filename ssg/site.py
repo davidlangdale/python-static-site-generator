@@ -19,7 +19,7 @@ class Site:
                 self.create_dir(path)
             elif path.is_file(self):
                 Site.run_parser(path)
-                
+
     def load_parser(self, extension):
         for parser in self.parsers:
             if extension is parser.valid_extension():
