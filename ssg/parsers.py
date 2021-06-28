@@ -24,7 +24,7 @@ class Parser:
             full_path.write_bytes(content)
 
     def copy(self, path, source, dest):
-        shutil.copy2(path, path.relative_to(self.source) / self.dest)
+        shutil.copy2(dest / path.relative_to(source))
 
 class ResourceParser(Parser):
     extensions = ['.jpg', '.png', '.gif', '.css', '.html']
