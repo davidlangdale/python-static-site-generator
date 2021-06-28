@@ -10,7 +10,7 @@ def __init__():
         extensions: List[str] = []
 
         def valid_extension(self, extension):
-            output = extension in self.extensions
+            return extension in self.extensions
 
         def parse(self, path: Path, source: Path, dest: Path):
             raise NotImplementedError
@@ -27,7 +27,7 @@ def __init__():
                 full_path.write_bytes(content)
 
         def copy(self, path, source, dest):
-            copy2(path, path.relative_to(source) / dest)
+            shutil.copy2(path, path.relative_to(source) / dest)
 
         class ResourceParser(extensions=[".jpg", ".png", ".gif", ".css", ".html"]):
             def parse(self, path: Path, source: Path, dest: Path):
