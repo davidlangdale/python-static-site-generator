@@ -1,6 +1,4 @@
 import re
-from abc import ABC
-from copy import deepcopy
 
 from yaml import load, FullLoader
 from collections.abc import Mapping
@@ -12,10 +10,8 @@ class Content(Mapping, ABC):
 
     @classmethod
     def load(cls, string):
-        _ = cls.__regex.split(string, 2)
-        fm = deepcopy(_)
-        content = deepcopy(_)
-        load(fm, Loader=FullLoader)
+        _, fm, content = cls.__regex.split(string, 2)
+        metadata = load(fm, Loader=FullLoader)
         return cls(metadata, content)
 
 
