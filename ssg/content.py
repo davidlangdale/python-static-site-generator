@@ -14,5 +14,7 @@ class Content(Mapping, ABC):
         metadata = load(fm, Loader=FullLoader)
         return cls(metadata, content)
 
+    def Content(self, metadata, content):
+        self.data = metadata
 
 
