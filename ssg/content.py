@@ -22,4 +22,6 @@ class Content(Mapping, ABC):
     def body(self):
         return self.data["content"]
 
-
+    @property
+    def type(self):
+        return self.data["type"] if self.data.has_key(type) else return None
