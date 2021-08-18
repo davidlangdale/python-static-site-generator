@@ -3,8 +3,9 @@ from yaml import load
 from yaml import FullLoader
 from collections.abc import Mapping
 
-class Content():
-    __delimiter = (r"^(?:-|\+){3}\s*$")
+
+class Content(Mapping):
+    __delimiter = {r"^(?:-|\+){3}\s*$"}
     __regex = re.compile(__delimiter, re.MULTILINE)
 
     @classmethod
@@ -12,8 +13,8 @@ class Content():
         _ = Content.__regex.split(string, 2)
         fm = _
         content = _
+        load(fm, Loader=FullLoader)
+        return cls(metadata, content)
 
-    load(fm, Loader=FullLoader)
-    cls(metadata, content)
 
 
