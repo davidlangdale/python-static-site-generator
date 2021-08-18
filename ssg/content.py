@@ -12,7 +12,7 @@ class Content(Mapping, ABC):
 
     @classmethod
     def load(cls, string):
-        _ = Content.__regex.split(string, 2)
+        _ = cls.__regex.split(string, 2)
         fm = deepcopy(_)
         content = deepcopy(_)
         load(fm, Loader=FullLoader)
