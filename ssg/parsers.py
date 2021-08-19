@@ -46,7 +46,8 @@ class MarkdownParser(Parser):
             "\x1b[1;32m{} converted to HTML. Metadata: {}\n".format(path.name, content)
         )
 
-
+class ReStructuredTextParser:
+    extensions = [".rst"]
 
 
 
