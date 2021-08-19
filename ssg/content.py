@@ -24,5 +24,6 @@ class Content(Mapping, ABC):
 
     @property
     def type(self):
-        test = self.data["type"] if self.data.has_key(type) else None
-        return test
+        return self.data["type"] if "type" in self.data else None
+
+
