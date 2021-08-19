@@ -29,4 +29,4 @@ class Content(Mapping, ABC):
 
     @type.setter
     def type(self, type):
-        self.data["type"]: type
+        self.data["type"]= type
