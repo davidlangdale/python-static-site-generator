@@ -36,7 +36,8 @@ class ResourceParser(Parser):
 
 
 
-
+class MarkdownParser:
+    content = Content.load(self.read(path))
 
 
 
