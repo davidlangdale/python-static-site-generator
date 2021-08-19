@@ -36,7 +36,7 @@ class ResourceParser(Parser):
 
 
 
-class MarkdownParser():
+class MarkdownParser:
     extensions = [".md", ".markdown"]
 
 
