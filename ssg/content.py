@@ -31,5 +31,5 @@ class Content(Mapping, ABC):
     def type(self, type):
         self.data["type"] = type
 
-    def __getitem__(self, item):
-        return self.data[item]
+    def __getitem__(self, key):
+        return self.data[key]
